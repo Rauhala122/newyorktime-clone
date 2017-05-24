@@ -1,0 +1,6 @@
+framework module Pods_Newyorktime_clone {
+  umbrella header "Pods-Newyorktime-clone-umbrella.h"
+
+  export *
+  module * { export * }
+}

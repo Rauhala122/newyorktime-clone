@@ -7,21 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DEE47AF42F811C0A3B4D204F /* Pods_Newyorktime_clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 792BC3B072AB340A925106BA /* Pods_Newyorktime_clone.framework */; };
+		F6074C4F1ED180D100C813AA /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6074C4E1ED180D100C813AA /* NewsCell.swift */; };
+		F6074C511ED1A10300C813AA /* CapitalisTypOasis.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6074C501ED1A10300C813AA /* CapitalisTypOasis.ttf */; };
+		F6074C531ED1BA5800C813AA /* NewsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6074C521ED1BA5800C813AA /* NewsHeaderCell.swift */; };
 		F61B52BD1ED09440007574D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B52BC1ED09440007574D3 /* AppDelegate.swift */; };
-		F61B52BF1ED09440007574D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B52BE1ED09440007574D3 /* ViewController.swift */; };
-		F61B52C21ED09440007574D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61B52C01ED09440007574D3 /* Main.storyboard */; };
+		F61B52BF1ED09440007574D3 /* NewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F61B52BE1ED09440007574D3 /* NewsVC.swift */; };
 		F61B52C41ED09440007574D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F61B52C31ED09440007574D3 /* Assets.xcassets */; };
 		F61B52C71ED09440007574D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F61B52C51ED09440007574D3 /* LaunchScreen.storyboard */; };
+		F6A8AE861ED60626005807D7 /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A8AE851ED60626005807D7 /* SlideMenu.swift */; };
+		F6A8AE881ED60B6D005807D7 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A8AE871ED60B6D005807D7 /* MenuCell.swift */; };
+		F6EB6F1E1ED1D96000EBD076 /* worldofwater.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6EB6F1D1ED1D96000EBD076 /* worldofwater.ttf */; };
+		F6EB6F241ED1FC3F00EBD076 /* PopularNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB6F231ED1FC3F00EBD076 /* PopularNews.swift */; };
+		F6EB6F261ED2A80800EBD076 /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB6F251ED2A80800EBD076 /* CategoriesVC.swift */; };
+		F6EB6F2C1ED31C1B00EBD076 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EB6F2B1ED31C1B00EBD076 /* Constant.swift */; };
+		F6EB6F2E1ED3528B00EBD076 /* MomÆt___.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6EB6F2D1ED3528A00EBD076 /* MomÆt___.ttf */; };
+		F6EB6F301ED352E300EBD076 /* ELEGANT TYPEWRITER.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6EB6F2F1ED352E300EBD076 /* ELEGANT TYPEWRITER.ttf */; };
+		F6EB6F321ED353E400EBD076 /* TravelingTypewriter.otf in Resources */ = {isa = PBXBuildFile; fileRef = F6EB6F311ED353E400EBD076 /* TravelingTypewriter.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1F7C5BE6FF78227B66560C /* Pods-Newyorktime-clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Newyorktime-clone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Newyorktime-clone/Pods-Newyorktime-clone.debug.xcconfig"; sourceTree = "<group>"; };
+		792BC3B072AB340A925106BA /* Pods_Newyorktime_clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Newyorktime_clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2849832BE4CC3E46CE3B0C2 /* Pods-Newyorktime-clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Newyorktime-clone.release.xcconfig"; path = "Pods/Target Support Files/Pods-Newyorktime-clone/Pods-Newyorktime-clone.release.xcconfig"; sourceTree = "<group>"; };
+		F6074C4E1ED180D100C813AA /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		F6074C501ED1A10300C813AA /* CapitalisTypOasis.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CapitalisTypOasis.ttf; sourceTree = "<group>"; };
+		F6074C521ED1BA5800C813AA /* NewsHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsHeaderCell.swift; sourceTree = "<group>"; };
 		F61B52B91ED09440007574D3 /* Newyorktime-clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Newyorktime-clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F61B52BC1ED09440007574D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F61B52BE1ED09440007574D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F61B52C11ED09440007574D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F61B52BE1ED09440007574D3 /* NewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsVC.swift; sourceTree = "<group>"; };
 		F61B52C31ED09440007574D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F61B52C61ED09440007574D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F61B52C81ED09440007574D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6A8AE851ED60626005807D7 /* SlideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenu.swift; sourceTree = "<group>"; };
+		F6A8AE871ED60B6D005807D7 /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		F6ACB0B31ED4B28C00242040 /* Newyorktime-clone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Newyorktime-clone-Bridging-Header.h"; sourceTree = "<group>"; };
+		F6EB6F1D1ED1D96000EBD076 /* worldofwater.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = worldofwater.ttf; sourceTree = "<group>"; };
+		F6EB6F231ED1FC3F00EBD076 /* PopularNews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularNews.swift; sourceTree = "<group>"; };
+		F6EB6F251ED2A80800EBD076 /* CategoriesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
+		F6EB6F2B1ED31C1B00EBD076 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F6EB6F2D1ED3528A00EBD076 /* MomÆt___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MomÆt___.ttf"; sourceTree = "<group>"; };
+		F6EB6F2F1ED352E300EBD076 /* ELEGANT TYPEWRITER.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ELEGANT TYPEWRITER.ttf"; sourceTree = "<group>"; };
+		F6EB6F311ED353E400EBD076 /* TravelingTypewriter.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TravelingTypewriter.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +56,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE47AF42F811C0A3B4D204F /* Pods_Newyorktime_clone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EB171940F44929A1D8E37F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				792BC3B072AB340A925106BA /* Pods_Newyorktime_clone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F61B52B01ED09440007574D3 = {
 			isa = PBXGroup;
 			children = (
 				F61B52BB1ED09440007574D3 /* Newyorktime-clone */,
 				F61B52BA1ED09440007574D3 /* Products */,
+				FCB61A2D320F588F18957D90 /* Pods */,
+				6EB171940F44929A1D8E37F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +92,67 @@
 		F61B52BB1ED09440007574D3 /* Newyorktime-clone */ = {
 			isa = PBXGroup;
 			children = (
+				F6EB6F2A1ED2A84C00EBD076 /* Util */,
 				F61B52BC1ED09440007574D3 /* AppDelegate.swift */,
-				F61B52BE1ED09440007574D3 /* ViewController.swift */,
-				F61B52C01ED09440007574D3 /* Main.storyboard */,
-				F61B52C31ED09440007574D3 /* Assets.xcassets */,
+				F6EB6F291ED2A82100EBD076 /* View */,
+				F6EB6F281ED2A81A00EBD076 /* Controller */,
 				F61B52C51ED09440007574D3 /* LaunchScreen.storyboard */,
 				F61B52C81ED09440007574D3 /* Info.plist */,
+				F6EB6F2B1ED31C1B00EBD076 /* Constant.swift */,
+				F61B52C31ED09440007574D3 /* Assets.xcassets */,
+				F6ACB0B31ED4B28C00242040 /* Newyorktime-clone-Bridging-Header.h */,
 			);
 			path = "Newyorktime-clone";
+			sourceTree = "<group>";
+		};
+		F6EB6F271ED2A81500EBD076 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6EB6F231ED1FC3F00EBD076 /* PopularNews.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F6EB6F281ED2A81A00EBD076 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F6EB6F251ED2A80800EBD076 /* CategoriesVC.swift */,
+				F61B52BE1ED09440007574D3 /* NewsVC.swift */,
+				F6EB6F271ED2A81500EBD076 /* Model */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F6EB6F291ED2A82100EBD076 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6074C521ED1BA5800C813AA /* NewsHeaderCell.swift */,
+				F6074C4E1ED180D100C813AA /* NewsCell.swift */,
+				F6A8AE851ED60626005807D7 /* SlideMenu.swift */,
+				F6A8AE871ED60B6D005807D7 /* MenuCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F6EB6F2A1ED2A84C00EBD076 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F6EB6F2D1ED3528A00EBD076 /* MomÆt___.ttf */,
+				F6074C501ED1A10300C813AA /* CapitalisTypOasis.ttf */,
+				F6EB6F311ED353E400EBD076 /* TravelingTypewriter.otf */,
+				F6EB6F2F1ED352E300EBD076 /* ELEGANT TYPEWRITER.ttf */,
+				F6EB6F1D1ED1D96000EBD076 /* worldofwater.ttf */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		FCB61A2D320F588F18957D90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3A1F7C5BE6FF78227B66560C /* Pods-Newyorktime-clone.debug.xcconfig */,
+				F2849832BE4CC3E46CE3B0C2 /* Pods-Newyorktime-clone.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F61B52CB1ED09440007574D3 /* Build configuration list for PBXNativeTarget "Newyorktime-clone" */;
 			buildPhases = (
+				26E30980C75C2CB059D1A1C9 /* [CP] Check Pods Manifest.lock */,
 				F61B52B51ED09440007574D3 /* Sources */,
 				F61B52B61ED09440007574D3 /* Frameworks */,
 				F61B52B71ED09440007574D3 /* Resources */,
+				84D0F9D5F4D24AD800F3F66C /* [CP] Embed Pods Frameworks */,
+				673AEEF0FF24D6C0B5E03621 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -97,6 +191,7 @@
 					F61B52B81ED09440007574D3 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 6S2P992SW6;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,35 +219,86 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6074C511ED1A10300C813AA /* CapitalisTypOasis.ttf in Resources */,
+				F6EB6F321ED353E400EBD076 /* TravelingTypewriter.otf in Resources */,
+				F6EB6F301ED352E300EBD076 /* ELEGANT TYPEWRITER.ttf in Resources */,
+				F6EB6F2E1ED3528B00EBD076 /* MomÆt___.ttf in Resources */,
 				F61B52C71ED09440007574D3 /* LaunchScreen.storyboard in Resources */,
+				F6EB6F1E1ED1D96000EBD076 /* worldofwater.ttf in Resources */,
 				F61B52C41ED09440007574D3 /* Assets.xcassets in Resources */,
-				F61B52C21ED09440007574D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26E30980C75C2CB059D1A1C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		673AEEF0FF24D6C0B5E03621 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Newyorktime-clone/Pods-Newyorktime-clone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84D0F9D5F4D24AD800F3F66C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Newyorktime-clone/Pods-Newyorktime-clone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F61B52B51ED09440007574D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F61B52BF1ED09440007574D3 /* ViewController.swift in Sources */,
+				F6A8AE861ED60626005807D7 /* SlideMenu.swift in Sources */,
+				F6EB6F2C1ED31C1B00EBD076 /* Constant.swift in Sources */,
+				F6A8AE881ED60B6D005807D7 /* MenuCell.swift in Sources */,
+				F61B52BF1ED09440007574D3 /* NewsVC.swift in Sources */,
+				F6EB6F241ED1FC3F00EBD076 /* PopularNews.swift in Sources */,
+				F6074C531ED1BA5800C813AA /* NewsHeaderCell.swift in Sources */,
+				F6074C4F1ED180D100C813AA /* NewsCell.swift in Sources */,
 				F61B52BD1ED09440007574D3 /* AppDelegate.swift in Sources */,
+				F6EB6F261ED2A80800EBD076 /* CategoriesVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F61B52C01ED09440007574D3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F61B52C11ED09440007574D3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F61B52C51ED09440007574D3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -259,27 +405,38 @@
 		};
 		F61B52CC1ED09440007574D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A1F7C5BE6FF78227B66560C /* Pods-Newyorktime-clone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6S2P992SW6;
 				INFOPLIST_FILE = "Newyorktime-clone/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SarTekh.Newyorktime-clone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Newyorktime-clone/Newyorktime-clone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		F61B52CD1ED09440007574D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2849832BE4CC3E46CE3B0C2 /* Pods-Newyorktime-clone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6S2P992SW6;
 				INFOPLIST_FILE = "Newyorktime-clone/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SarTekh.Newyorktime-clone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Newyorktime-clone/Newyorktime-clone-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -302,6 +459,7 @@
 				F61B52CD1ED09440007574D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
