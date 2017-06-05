@@ -18,6 +18,14 @@ class PopularNews {
     private var _imageURL: String!
     private var _section: String!
     private var _keywords: String!
+    private var _isRead: Bool!
+    
+    var isRead: Bool {
+        if _isRead == nil {
+            _isRead = false
+        }
+        return _isRead
+    }
     
     var imageURL: String {
         if _imageURL == nil {
@@ -76,7 +84,8 @@ class PopularNews {
         return _section
     }
     
-    init(title: String, caption: String, url: String, views: Int, section: String, keywords: String, imageURL: String) {
+    init(title: String, caption: String, url: String, views: Int, section: String, keywords: String, imageURL: String, isRead: Bool) {
+        _isRead = isRead
         _imageURL = imageURL
         _title = title
         _caption = caption

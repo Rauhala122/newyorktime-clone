@@ -8,6 +8,7 @@ target 'Newyorktime-clone' do
   # Pods for Newyorktime-clone
 pod 'Alamofire', '~> 4.4'
 pod 'SDWebImage'
+pod 'SwipeCellKit'
 
 
 end

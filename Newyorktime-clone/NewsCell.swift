@@ -7,122 +7,75 @@
 //
 
 import UIKit
+import SwipeCellKit
 
 class NewsCell: UICollectionViewCell {
     
-    var popularNews: PopularNews? {
+    var isCellSelected = false
+    
+    override var isHighlighted: Bool {
         didSet {
-            
-            if let popularTitle = popularNews?.title {
-                
-                title.text = popularTitle
-                let size = CGSize(width: frame.width - 162, height: 1000)
-                let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14)]
-                let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-                
-                let estimatedFrame = NSString(string: popularTitle).boundingRect(with: size, options: options, attributes: attributes, context: nil)
-                
-                let estimatedHeight = estimatedFrame.size.height
-                print(estimatedHeight, popularTitle)
-                
-                if estimatedHeight > 50 {
-                    titleHeightConstraint.constant = 55
-                } else if estimatedHeight > 33 {
-                    titleHeightConstraint.constant = 40
-                } else if estimatedHeight > 16 {
-                    self.titleHeightConstraint.constant = 17
-                }
-                
-            }
-            
-            if let caption = popularNews?.caption {
-                
-                subtitle.text = caption
-                
-                let size = CGSize(width: frame.width - 162, height: 1000)
-                let attributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 12)]
-                let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-                
-                let estimatedFrame = NSString(string: caption).boundingRect(with: size, options: options, attributes: attributes, context: nil)
-                
-                let estimatedHeight = estimatedFrame.size.height
-
-                if estimatedHeight > 143 {
-                    captionHeightConstraint.constant = 132
-                } else if estimatedHeight > 85 {
-                    captionHeightConstraint.constant = 100
-                } else if estimatedHeight > 71 {
-                    captionHeightConstraint.constant = 85
-                }
-                else if estimatedHeight > 57 {
-                    captionHeightConstraint.constant = 70
-                }
-                else if estimatedHeight > 42.9 {
-                    captionHeightConstraint.constant = 50
-                } else if estimatedHeight > 28 {
-                    captionHeightConstraint.constant = 35
-                }
-                else if estimatedHeight > 14 {
-                    captionHeightConstraint.constant = 17
-                }
-                
-            } else {
-                captionHeightConstraint.constant = 0
-            }
-            
-            if let section = popularNews?.section {
-                popularTypeLabel.text = section
-            }
-            if let views = popularNews?.views {
-                popularLabel.text = "\(views)."
-            }
-            
-            if let imageURL = popularNews?.imageURL {
-                image.sd_setImage(with: URL(string: imageURL))
-            }
-            
+            backgroundColor = isHighlighted ? .darkGray : .white
         }
+    }
+    
+    var popularNew: PopularNews? {
+        didSet {
+            if let news = popularNew {
+                
+                let sectionColor = UIColor(white: 0.3, alpha: 1)
+                let titleColor = UIColor.black
+                
+                let attributedText = NSMutableAttributedString(string: news.section, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 12), NSForegroundColorAttributeName: sectionColor])
+                
+                attributedText.append(NSAttributedString(string: "\n\(news.title)", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 14, weight: UIFontWeightBold),NSForegroundColorAttributeName: titleColor, ]))
+                
+                let captionColor = UIColor(white: 0.6, alpha: 1)
+                attributedText.append(NSAttributedString(string: "\n\(news.caption)", attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 12), NSForegroundColorAttributeName: captionColor]))
+                
+                let paragrapStyle = NSMutableParagraphStyle()
+                paragrapStyle.alignment = .left
+                
+                let length = attributedText.string.characters.count
+                attributedText.addAttribute(NSParagraphStyleAttributeName, value: paragrapStyle, range: NSRange(location: 0, length: length))
+                
+                textView.attributedText = attributedText
+                
+                popularLabel.text = "\(news.views)."
+                
+                image.sd_setImage(with: URL(string: news.imageURL))
+            }
         
+        }
     }
     
     let popularLabel: UILabel = {
         let label = UILabel()
         label.text = "2."
-        label.alpha = 0.8
-        label.font = UIFont(name: "Avenir", size: 20)
+        label.textColor = UIColor(white: 0, alpha: 1)
         label.font = UIFont.boldSystemFont(ofSize: 20)
+        
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let popularTypeLabel: UILabel = {
+    let textView: UITextView = {
+        let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.isSelectable = false
+        textView.isEditable = false
+        textView.isUserInteractionEnabled = false
+        textView.backgroundColor = .clear
+        return textView
+    }()
+    
+    let dateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "OPINION"
+        label.textColor = UIColor(white: 0.5, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 12)
-        label.alpha = 0.5
+        label.text = "19.5"
         return label
-    }()
-    
-    let title: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.backgroundColor = .red
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "TravelingTypewriter", size: 14)
-        label.font = UIFont.boldSystemFont(ofSize: 14)
-        return label
-    }()
-    
-    let subtitle: UILabel = {
-        let tv = UILabel()
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.numberOfLines = 0
-        tv.textAlignment = .left
-        tv.alpha = 0.5
-        tv.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla quam nec accumsan ultrices."
-        tv.font = UIFont(name: "Avenir", size: 12)
-        return tv
     }()
     
     let image: UIImageView = {
@@ -134,24 +87,15 @@ class NewsCell: UICollectionViewCell {
         return imageView
     }()
     
-    let timeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Avenir", size: 12)
-        label.alpha = 0.6
-        label.text = String(19.5)
-        return label
-    }()
-    
     let shareButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setBackgroundImage(#imageLiteral(resourceName: "Upload-50"), for: .normal)
         return button
     }()
     
     let boobmarkButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setBackgroundImage(#imageLiteral(resourceName: "Bookmark Ribbon-50"), for: .normal)
         return button
@@ -164,25 +108,29 @@ class NewsCell: UICollectionViewCell {
         return view
     }()
     
-    var titleHeightConstraint: NSLayoutConstraint!
-    var captionHeightConstraint: NSLayoutConstraint!
+    var textViewHeightConstraint: NSLayoutConstraint!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        
+        if isCellSelected {
+            backgroundView?.backgroundColor = .lightGray
+        } else {
+            backgroundView?.backgroundColor = .white
+        }
+        
     }
     
     func setupViews() {
         setupPopularLabel()
-        setupTypeLabel()
         setupImage()
-        setupTitle()
-        setupSubtitle()
-        setupTime()
+        setupTextView()
+        setupDateLabel()
         setupSeperatorView()
         setupShare()
         setupBookmark()
-        bottomAnchor.constraint(equalTo: seperatorView.bottomAnchor).isActive = true
+        bottomAnchor.constraint(equalTo: seperatorView.bottomAnchor, constant: 5).isActive = true
     }
     
     func setupPopularLabel() {
@@ -192,63 +140,46 @@ class NewsCell: UICollectionViewCell {
         popularLabel.widthAnchor.constraint(equalToConstant: 32).isActive = true
         popularLabel.heightAnchor.constraint(equalToConstant: 25).isActive = true
     }
-    
-    func setupTypeLabel() {
-        addSubview(popularTypeLabel)
-        popularTypeLabel.leftAnchor.constraint(equalTo: popularLabel.rightAnchor).isActive = true
-        popularTypeLabel.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true
-        popularTypeLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        popularTypeLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
-    }
-    
-    func setupTitle() {
-        addSubview(title)
-        title.leftAnchor.constraint(equalTo: popularTypeLabel.leftAnchor).isActive = true
-        title.topAnchor.constraint(equalTo: popularTypeLabel.bottomAnchor).isActive = true
-        title.rightAnchor.constraint(equalTo: image.leftAnchor, constant: -10).isActive = true
+  
+    func setupTextView() {
+        addSubview(textView)
+        textView.leftAnchor.constraint(equalTo: popularLabel.rightAnchor).isActive = true
+        textView.rightAnchor.constraint(equalTo: image.leftAnchor, constant: -10).isActive = true
+        textView.topAnchor.constraint(equalTo: topAnchor, constant: 0).isActive = true
         
-        titleHeightConstraint = title.heightAnchor.constraint(equalToConstant: 10)
-        titleHeightConstraint.isActive = true
+        textViewHeightConstraint = textView.heightAnchor.constraint(equalToConstant: 300)
+        textViewHeightConstraint.isActive = true
     }
-    
-    func setupSubtitle() {
-        addSubview(subtitle)
-        subtitle.leftAnchor.constraint(equalTo: title.leftAnchor).isActive = true
-        subtitle.topAnchor.constraint(equalTo: title.bottomAnchor).isActive = true
-        subtitle.widthAnchor.constraint(equalTo: title.widthAnchor).isActive = true
-        
-        captionHeightConstraint = subtitle.heightAnchor.constraint(equalToConstant: 70)
-        captionHeightConstraint.isActive = true
-    }
-    
+
     func setupImage() {
         addSubview(image)
         image.rightAnchor.constraint(equalTo: rightAnchor, constant: -10).isActive = true
-        image.topAnchor.constraint(equalTo: popularTypeLabel.topAnchor, constant: 10).isActive = true
+        image.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         image.widthAnchor.constraint(equalToConstant: 100).isActive = true
         image.heightAnchor.constraint(equalToConstant: 70).isActive = true
     }
     
-    func setupTime() {
-        addSubview(timeLabel)
-        timeLabel.leftAnchor.constraint(equalTo: title.leftAnchor, constant: 0).isActive = true
-        timeLabel.topAnchor.constraint(equalTo: subtitle.bottomAnchor, constant: 3).isActive = true
-        timeLabel.widthAnchor.constraint(equalToConstant: 40).isActive = true
-        timeLabel.heightAnchor.constraint(equalToConstant: 15).isActive = true
+    func setupDateLabel() {
+        addSubview(dateLabel)
+        dateLabel.leftAnchor.constraint(equalTo: textView.leftAnchor, constant: 4
+            ).isActive = true
+        dateLabel.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 0).isActive = true
+        dateLabel.heightAnchor.constraint(equalToConstant: 12).isActive = true
+        dateLabel.widthAnchor.constraint(equalToConstant: 40).isActive = true
     }
     
     func setupShare() {
         addSubview(shareButton)
         shareButton.rightAnchor.constraint(equalTo: image.rightAnchor).isActive = true
-        shareButton.bottomAnchor.constraint(equalTo: timeLabel.bottomAnchor).isActive = true
-        shareButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        shareButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        shareButton.bottomAnchor.constraint(equalTo: dateLabel.bottomAnchor).isActive = true
+        shareButton.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        shareButton.heightAnchor.constraint(equalToConstant: 22).isActive = true
     }
     
     func setupSeperatorView() {
         addSubview(seperatorView)
         seperatorView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        seperatorView.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 3).isActive = true
+        seperatorView.topAnchor.constraint(equalTo: dateLabel.bottomAnchor, constant: 5).isActive = true
         seperatorView.widthAnchor.constraint(equalTo: widthAnchor, constant: -20).isActive = true
         seperatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
     }
@@ -257,9 +188,11 @@ class NewsCell: UICollectionViewCell {
         addSubview(boobmarkButton)
         boobmarkButton.rightAnchor.constraint(equalTo: shareButton.leftAnchor, constant: -10).isActive = true
         boobmarkButton.bottomAnchor.constraint(equalTo: shareButton.bottomAnchor).isActive = true
-        boobmarkButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        boobmarkButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        boobmarkButton.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        boobmarkButton.heightAnchor.constraint(equalToConstant: 22).isActive = true
     }
+    
+
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

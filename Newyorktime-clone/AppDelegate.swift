@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: NewsVC(collectionViewLayout: UICollectionViewFlowLayout()))
+//        window?.rootViewController = UINavigationController(rootViewController: NewsVC(collectionViewLayout: UICollectionViewFlowLayout()))
+        window?.rootViewController = LoginController()
         
         UINavigationBar.appearance().barTintColor = .white
         

@@ -3,15 +3,18 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - SwipeCellKit (1.7.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - SDWebImage
+  - SwipeCellKit
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SwipeCellKit: 73440541f03434eaedc158e5aed9bc1e0d9b898e
 
-PODFILE CHECKSUM: a442cce07a9c2abbb097985bb48a25ce5f8c09bd
+PODFILE CHECKSUM: a995dd58a8c54300ea85dd0375fefb2ad8c4438a
 
 COCOAPODS: 1.2.0.rc.1

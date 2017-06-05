@@ -12,8 +12,13 @@ class NewsHeaderCell: UICollectionViewCell {
     
     var headerNew1: PopularNews? {
         didSet {
+            
+            popularLabel.text = "1."
+            
             if let popularTitle = headerNew1?.title {
                 title.text = popularTitle
+                
+                print("Header Title", headerNew1?.title)
                 
                 let size = CGSize(width: frame.width - 55, height: 1000)
                 let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 15)]
@@ -51,14 +56,11 @@ class NewsHeaderCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.clipsToBounds = true
         return imageView
     }()
     
     let popularLabel: UILabel = {
         let label = UILabel()
-        label.text = "1."
-        label.alpha = 0.8
         label.font = UIFont(name: "Avenir", size: 20)
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -69,9 +71,8 @@ class NewsHeaderCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "OPINION"
-        label.text = "World"
         label.font = UIFont.systemFont(ofSize: 12)
-        label.alpha = 0.5
+        label.textColor = UIColor(white: 0.5, alpha: 1)
         return label
     }()
     
@@ -105,7 +106,7 @@ class NewsHeaderCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "Avenir", size: 12)
-        label.alpha = 0.6
+        label.textColor = UIColor(white: 0.6, alpha: 1)
         label.text = String(20.5)
         return label
     }()
@@ -206,15 +207,15 @@ class NewsHeaderCell: UICollectionViewCell {
         addSubview(shareButton)
         shareButton.rightAnchor.constraint(equalTo: title.rightAnchor).isActive = true
         shareButton.bottomAnchor.constraint(equalTo: timeLabel.bottomAnchor).isActive = true
-        shareButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        shareButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        shareButton.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        shareButton.heightAnchor.constraint(equalToConstant: 22).isActive = true
     }
     func setupBookmark() {
         addSubview(boobmarkButton)
         boobmarkButton.rightAnchor.constraint(equalTo: shareButton.leftAnchor, constant: -10).isActive = true
         boobmarkButton.bottomAnchor.constraint(equalTo: shareButton.bottomAnchor).isActive = true
-        boobmarkButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
-        boobmarkButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        boobmarkButton.widthAnchor.constraint(equalToConstant: 22).isActive = true
+        boobmarkButton.heightAnchor.constraint(equalToConstant: 22).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
